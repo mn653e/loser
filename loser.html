@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <style>
+      #output {
+        font-size: 40px;
+        text-align: center;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="output">Matthew</div>
+    <script>
+      setTimeout(() => {
+        let word = "Matthew";
+        let result = "Loser";
+        let output = document.getElementById("output");
+        let length = word.length;
+        let counter = 0;
+        
+        let timer = setInterval(() => {
+          output.innerHTML = result.substr(0, counter) + word.substr(counter + 1, length);
+          counter++;
+          
+          if (counter === length) {
+            clearInterval(timer);
+            output.innerHTML = result;
+          }
+        }, 500);
+      }, 1000);
+    </script>
+  </body>
+</html>
